@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebDev Academy - Pendaftaran</title>
+  <link rel="stylesheet" href="/src/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .error {
+      border-color: red !important;
+      background-color: #fee2e2 !important; /* merah muda */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between p-6">
+      <div class="flex items-center gap-3">
+          <img class="w-24" src="/static/img/logo.png" alt="Logo UKM" />
+          <a href="#" class="font-sans text-2xl sm:text-2xl lg:text-5xl font-bold">
+            UKM<br />START UP
+          </a>
+      </div>
+      <button>
+        <a class="w-full px-4 py-2 h-full bg-gray-200 hover:bg-gray-300 rounded" href="/public/index.html">Kembali</a>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto p-6 text-center mt-6">
+    <h3 class="text-blue-600 font-semibold mb-2">✨ Pendaftaran Terbuka - Batch Oktober 2025</h3>
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Daftar Kelas Web Development</h1>
+    <p class="text-gray-700">Bergabunglah sebagai developer sukses. Mulai karir impian Anda hari ini!</p>
+  </section>
+
+  <!-- Form & Benefit Section -->
+  <section class="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+    
+    <!-- Form Pendaftaran -->
+    <form id="formPendaftaran" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+      <h2 class="text-xl font-semibold mb-2">Form Pendaftaran</h2>
+      <p class="text-gray-500 text-sm mb-4">Isi data diri Anda dengan lengkap dan benar</p>
+
+      <!-- Nama & NIM -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Nama Lengkap *</label>
+          <input name="nama" type="text" placeholder="Masukkan nama lengkap" required
+                 class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">NIM *</label>
+          <input id="nim" name="nim" type="text" placeholder="Masukkan NIM" required
+                 class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+
+      <!-- WhatsApp -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Nomor WhatsApp *</label>
+        <input id="nohp" name="hp" type="tel" placeholder="08xxxxxxxxxx" required
+               class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Email *</label>
+        <input name="email" type="email" placeholder="nama@email.com" required
+               class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Asal Sekolah -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Asal Sekolah *</label>
+        <input name="asal" type="text" placeholder="Masukkan asal sekolah" required
+               class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Motivasi -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Mengapa Anda ingin belajar web? (Opsional)</label>
+        <textarea name="motivasi" placeholder="Ceritakan motivasi Anda..."
+                  class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="flex items-center space-x-2">
+        <input type="checkbox" id="agree" required class="h-4 w-4 text-blue-600">
+        <label for="agree" class="text-sm text-gray-700">Saya setuju dengan semua persyaratan</label>
+      </div>
+
+      <button id="submitBtn" type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition-colors">
+        Daftar Sekarang
+      </button>
+
+      <p id="pesan" class="text-center mt-3 font-semibold text-green-600"></p>
+    </form>
+
+    <!-- Benefit & Promo Section -->
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Yang Anda Dapatkan</h2>
+        <ul class="text-gray-700 space-y-2 list-disc list-inside">
+          <li>Kelas Small Batch (Max 50)</li>
+          <li>1 Day Intensive</li>
+          <li>Sertifikat Resmi</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-semibold mb-2">🎯 Promo Early Bird</h3>
+        <ul class="text-gray-700 space-y-1 list-disc list-inside">
+          <li>✅ Free trial class</li>
+          <li>✅ E-book premium</li>
+          <li>✅ 1-on-1 mentoring session</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-10 py-6 text-center text-gray-500 text-sm">
+    © 2025 Pendaftaran. All rights reserved.
+  </footer>
+
+  <script>
+const nimInput = document.getElementById('nim');
+const nohpInput = document.getElementById('nohp');
+const form = document.getElementById('formPendaftaran');
+const pesan = document.getElementById('pesan');
+
+// Validasi input angka
+function validateNumberInput(input) {
+  input.addEventListener('input', () => {
+    const value = input.value;
+    if (!/^[0-9]*$/.test(value)) {
+      input.classList.add('error');
+    } else {
+      input.classList.remove('error');
+    }
+  });
+}
+validateNumberInput(nimInput);
+validateNumberInput(nohpInput);
+
+// Submit form ke backend
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nim = nimInput.value.trim();
+  const nohp = nohpInput.value.trim();
+
+  let errorFound = false;
+
+  // Validasi NIM & No WA
+  if (!/^[0-9]+$/.test(nim)) {
+    console.error("❌ NIM harus berupa angka!");
+    nimInput.classList.add('error');
+    errorFound = true;
+  } else nimInput.classList.remove('error');
+
+  if (!/^[0-9]+$/.test(nohp)) {
+    console.error("❌ Nomor WhatsApp harus berupa angka!");
+    nohpInput.classList.add('error');
+    errorFound = true;
+  } else nohpInput.classList.remove('error');
+
+  if (nim.length !== 8) {
+    console.error("⚠️ NIM harus 8 angka!");
+    nimInput.classList.add('error');
+    errorFound = true;
+  }
+
+  if (nohp.length !== 12) {
+    console.error("⚠️ Nomor WhatsApp harus 12 angka!");
+    nohpInput.classList.add('error');
+    errorFound = true;
+  }
+
+  if (errorFound) return; // hentikan submit jika ada error
+
+  // Ambil semua data form
+  const formData = Object.fromEntries(new FormData(form).entries());
+
+  try {
+    const res = await fetch("/api/daftar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+    const result = await res.json();
+
+    // Tampilkan pesan dari backend di halaman
+    pesan.textContent = result.message;
+
+    if (res.ok) {
+      console.log("✅ Pendaftaran berhasil:", formData);
+      form.reset();
+    } else {
+      // Error backend (50 peserta / duplikat)
+      console.warn("⚠️ Backend error:", result.message);
+    }
+
+  } catch (err) {
+    pesan.textContent = "❌ Terjadi kesalahan, coba lagi!";
+    console.error("⚠️ Fetch error:", err);
+  }
+});
+</script>
+</body>
+</html>
